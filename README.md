@@ -44,9 +44,9 @@ This project is for quickly seting up a development environment using Docker. I'
 
 - `docker-compose.yml`: Lists all the services and how to run them.
 - `prometheus.yml`: Settings for Prometheus.
-- `.env.example`: Shows what environment variables you can set.
-- `requirements.txt`: Python packages (if you use Python).
-- `dev.sh`: Helper script for development (if needed).
+- `.env.example`: Shows what environment variables i've set. Can also set different variables.
+- `requirements.txt`: Python packages.
+- `dev.sh`: Helper script for development.
 
 ## Notes
 - All your data is saved in Docker volumes, so it won't disappear when you stop containers.

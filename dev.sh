@@ -66,7 +66,7 @@ fi
 
 docker compose up -d
 
-# --- 6) Friendly next steps ---
+# --- 6) Next steps ---
 echo
 echo "Done! Dev infra is running (detached)."
 echo
