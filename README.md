@@ -1,10 +1,10 @@
 # Agent Factory
 
-This project is for quickly seting up a development environment using Docker. I've tried to include the tools for databases, caching, tracing, and monitoring—all with simple commands. From the product requirements document
-
-## What's Included?
+This repo is all the tasks I need to completed related to Codon's Agent Factory
 
 ## I am still doing research on what all of these different tools do.
+
+## Tools
 
 - **Postgres**: A database to store your app's data.
 - **Redis**: A fast key-value store for caching and quick data access.
@@ -40,7 +40,7 @@ This project is for quickly seting up a development environment using Docker. I'
    - Prometheus: [http://localhost:9090](http://localhost:9090)
    - Grafana (if enabled): [http://localhost:3000](http://localhost:3000)
 
-## Important Files
+## Files
 
 - `docker-compose.yml`: Lists all the services and how to run them.
 - `prometheus.yml`: Settings for Prometheus.
@@ -49,9 +49,5 @@ This project is for quickly seting up a development environment using Docker. I'
 - `dev.sh`: Helper script for development.
 
 ## Notes
-- All your data is saved in Docker volumes, so it won't disappear when you stop containers.
-- Grafana is ready to use if you want dashboards—just uncomment it in `docker-compose.yml`.
 
 ---
-
-If you get stuck, check the official docs for each tool or ask for help!
