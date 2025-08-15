@@ -50,4 +50,10 @@ This repo is all the tasks I need to completed related to Codon's Agent Factory
 
 ## Notes
 
----
+## Continuous Integration (CI)
+
+This project now includes a CI workflow for automated testing and checks. You can find the workflow file at:
+
+- `.github/workflow/ci.yml`
+
+Last updated: 14 August 2025
