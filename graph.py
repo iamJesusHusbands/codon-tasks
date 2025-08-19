@@ -31,8 +31,6 @@ except Exception:
 
 # 1) Define the graph "state" 
 # The state is just a dictionary with a "messages" list.
-
-# - When a node returns {"messages": ["foo"]}, LangGraph will APPEND to the list.
 class EchoState(TypedDict):
     messages: Annotated[List[str], operator.add]
 
