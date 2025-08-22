@@ -1,59 +1,69 @@
 # Agent Factory
 
-This repo is all the tasks I need to completed related to Codon's Agent Factory
+This repo contains all tasks and code for Codon's Agent Factory, including orchestration, observability, and testing.
 
-## I am still doing research on what all of these different tools do.
+## Tools & Services
 
-## Tools
-
-- **Postgres**: A database to store your app's data.
-- **Redis**: A fast key-value store for caching and quick data access.
-- **Jaeger**: Lets you see how requests move through your app (tracing).
-- **Prometheus**: Collects and shows metrics about your app and services.
-- **Grafana** (optional): Makes dashboards to visualize your data (not enabled by default).
+- **Postgres**: Database for persistent storage.
+- **Redis**: Fast key-value store for caching.
+- **Jaeger**: Distributed tracing.
+- **Prometheus**: Metrics collection.
+- **Grafana** (optional): Dashboards (currently commented out).
+- **Python**: Main language, with dependencies managed in `requirements.txt` and `requirements-dev.txt`.
 
 ## How to Use
 
-1. **Get the code**
+1. **Clone the repo**
    ```zsh
    git clone https://github.com/iamJesusHusbands/codon-tasks.git
    cd codon-tasks
    ```
 
-2. **Set up your environment variables**
-   - Copy `.env.example` to `.env`:
-     ```zsh
-     cp .env.example .env
-     ```
-   - Edit `.env` if you want to change default usernames, passwords, or ports.
+2. **Set up your environment**
+   - Copy `.env.example` to `.env` and edit as needed.
 
-3. **Start everything**
+3. **Create a virtual environment and install dependencies**
+   ```zsh
+   bash dev.sh
+   ```
+
+4. **Start all services**
    ```zsh
    docker compose up -d
    ```
-   This will start all the services in the background.
 
-4. **Open the tools in your browser**
-   - Postgres: `localhost:5432` (for apps to connect)
-   - Redis: `localhost:6379` (for apps to connect)
+5. **Access services**
+   - Postgres: `localhost:5432`
+   - Redis: `localhost:6379`
    - Jaeger UI: [http://localhost:16686](http://localhost:16686)
    - Prometheus: [http://localhost:9090](http://localhost:9090)
    - Grafana (if enabled): [http://localhost:3000](http://localhost:3000)
 
-## Files
+## Code Structure
 
-- `docker-compose.yml`: Lists all the services and how to run them.
-- `prometheus.yml`: Settings for Prometheus.
-- `.env.example`: Shows what environment variables i've set. Can also set different variables.
-- `requirements.txt`: Python packages.
-- `dev.sh`: Helper script for development.
+- `graph.py`: Example LangGraph app with echo node and in-memory checkpointing.
+- `tests/test_graph.py`: Pytest-based tests for `graph.py`.
+- `requirements.txt`: Main dependencies.
+- `requirements-dev.txt`: Dev dependencies (includes pytest, ruff, black, mypy, etc.).
+- `dev.sh`: Script to set up Python environment and dependencies.
+- `docker-compose.yml`: Service definitions.
+- `prometheus.yml`: Prometheus config.
+- `.env.example`: Example environment variables.
 
-## Notes
+## Testing
+
+- Run tests with:
+  ```zsh
+  pytest
+  ```
+  or
+  ```zsh
+  python -m pytest
+  ```
 
 ## Continuous Integration (CI)
 
-This project now includes a CI workflow for automated testing and checks. You can find the workflow file at:
-
+Automated testing and checks are set up in:
 - `.github/workflow/ci.yml`
 
-Last updated: 14 August 2025
+_Last updated: 22 August 2025_
