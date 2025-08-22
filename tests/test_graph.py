@@ -5,7 +5,7 @@ from graph import app
 
 def test_graph_compiles():
     """
-    Goal: prove the graph compiled successfully and we got a runnable app.
+    Goal: prove the graph compiled successfully and got a runnable app.
     If compilation had failed, importing `app` or calling its methods would error.
     """
     # Basic checks
