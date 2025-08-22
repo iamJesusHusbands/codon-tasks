@@ -1,35 +1,34 @@
-```
-# --- Core agent orchestration (LangGraph + LLM clients) ---
+# --- Core agent orchestration ---
 langgraph
 langchain-core
-langchain-openai          # OpenAI client via LangChain
-litellm                   # Optional: multi-vendor routing + cost tracking
+langchain-openai
+litellm
 
-# --- MCP (Model Context Protocol) client ---
-mcp                       # Python SDK for Model Context Protocol
+# --- MCP client ---
+mcp
 
-# --- A2A HTTP server + UI (FastAPI/Starlette) ---
+# --- FastAPI / Starlette / HTTP & streaming ---
 fastapi
 starlette
 uvicorn[standard]
-orjson                    # Faster JSON responses
-python-multipart          # File uploads (YAML agent specs)
+orjson
+python-multipart
 pydantic
-pydantic-settings         # Env-based config
-PyYAML                    # YAML agent templates/configs
-typer                     # CLI for scaffolding/versioning
-httpx                     # Async HTTP calls (tooling, callbacks)
-sse-starlette             # Server-Sent Events for streaming console
-aiofiles                  # Async file I/O (uploads/logs)
+pydantic-settings
+PyYAML
+typer
+httpx
+sse-starlette
+aiofiles
 
-# --- AuthN/AuthZ & security (OAuth2 / JWT / RBAC) ---
-Authlib                   # OAuth2 (auth code & client creds)
-python-jose[cryptography] # JWT signing/validation
-passlib[bcrypt]           # Password hashing if needed for admin users
-casbin                    # Role-Based Access Control
-python-dotenv             # .env support
+# --- AuthN/AuthZ & security ---
+Authlib
+python-jose[cryptography]
+passlib[bcrypt]
+casbin
+python-dotenv
 
-# --- Observability: OpenTelemetry + Prometheus ---
+# --- Observability (OTel + Prometheus) ---
 opentelemetry-api
 opentelemetry-sdk
 opentelemetry-exporter-otlp
@@ -41,19 +40,15 @@ opentelemetry-instrumentation-grpc
 prometheus-client
 prometheus-fastapi-instrumentator
 
-# --- Storage / persistence (checkpoints, caching) ---
-psycopg[binary]           # Postgres backend for LangGraph checkpoints
-redis                     # Redis cache + memoization (async supported in v5)
+# --- Storage / persistence ---
+psycopg[binary]
+redis
 
-# --- Optional transport / APIs ---
-grpcio                    # gRPC transport option for A2A
+# --- Optional transport ---
+grpcio
 grpcio-tools
 
-# --- Testing, retries, misc quality-of-life ---
-tenacity                  # Robust retries for flaky tool calls
-structlog                 # Structured logging
-
-# --- Type helpers (sometimes required by newer libs) ---
+# --- QoL / utilities ---
+tenacity
+structlog
 typing-extensions
-
-```
