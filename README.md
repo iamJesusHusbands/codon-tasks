@@ -49,6 +49,7 @@ This repo contains all tasks and code for Codon's Agent Factory, including orche
 - `docker-compose.yml`: Service definitions.
 - `prometheus.yml`: Prometheus config.
 - `.env.example`: Example environment variables.
+- `telemetry_init.py`: Sets up OpenTelemetry tracing for the project.
 
 ## Testing
 
@@ -66,4 +67,4 @@ This repo contains all tasks and code for Codon's Agent Factory, including orche
 Automated testing and checks are set up in:
 - `.github/workflow/ci.yml`
 
-_Last updated: 22 August 2025_
+_Last updated: 27 August 2025_
