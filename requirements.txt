@@ -7,6 +7,9 @@ litellm
 # --- MCP client ---
 mcp
 
+# --- A2A ---
+a2a-sdk[telemetry]
+
 # --- FastAPI / Starlette / HTTP & streaming ---
 fastapi
 starlette
@@ -39,6 +42,7 @@ opentelemetry-instrumentation-logging
 opentelemetry-instrumentation-grpc
 prometheus-client
 prometheus-fastapi-instrumentator
+
 
 # --- Storage / persistence ---
 psycopg[binary]
