@@ -1,4 +1,12 @@
 services:
+  # Collector service: receives telemetry from the app
+  otel-collector:
+      image: otel/opentelemetry-collector:latest
+      command: ["--config=/etc/otel-collector-config.yaml"] # use config file
+      volumes:
+        - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml:ro
+      ports:
+        - "4318:4318"   # OTLP/HTTP ingest
   postgres:
     image: postgres:16-alpine
     restart: unless-stopped
@@ -21,14 +29,17 @@ services:
     volumes:
       - redisdata:/data
 
-  # Jaeger "all-in-one" gives you tracing + OTLP receivers out of the box
+  # Jaeger service: stores traces and provides a web UI to view them
+  # Jaeger "all-in-one" gives tracing + OTLP receivers out of the box
   jaeger:
     image: jaegertracing/all-in-one:1.57
-    restart: unless-stopped
+    environment:
+      COLLECTOR_OTLP_ENABLED: "true" # let Jaeger accept OTLP input
+    # restart: unless-stopped
     ports:
       - "16686:16686"   # Jaeger UI
-      - "4317:4317"     # OTLP gRPC
-      - "4318:4318"     # OTLP HTTP
+    # - "4317:4317"     # OTLP gRPC
+    # - "4318:4318"     # OTLP HTTP
 
   prometheus:
     image: prom/prometheus:v2.53.0

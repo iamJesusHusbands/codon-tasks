@@ -21,7 +21,7 @@ def _parse_headers(raw: str | None) -> Dict[str, str]:
         "authorization=Bearer mytoken,env=prod"
     into:
         {"authorization": "Bearer mytoken", "env": "prod"}
-    Used for OTEL_EXPORTER_OTLP_HEADERS if your backend needs extra headers.
+    Used for OTEL_EXPORTER_OTLP_HEADERS if backend needs extra headers.
     """
     if not raw:
         return {}
