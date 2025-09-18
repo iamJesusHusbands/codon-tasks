@@ -1,6 +1,6 @@
 import os
 import pytest
-from secrets_loader import EnvSecretsBackend, secrets
+from app.secrets_loader import EnvSecretsBackend, secrets
 
 def test_env_backend_returns_value(monkeypatch):
     monkeypatch.setenv("OPENAI_API_KEY", "abc123")

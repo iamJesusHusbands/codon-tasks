@@ -23,6 +23,7 @@ typer
 httpx
 sse-starlette
 aiofiles
+jinja2
 
 # --- AuthN/AuthZ & security ---
 Authlib
@@ -42,6 +43,7 @@ opentelemetry-instrumentation-logging
 opentelemetry-instrumentation-grpc
 prometheus-client
 prometheus-fastapi-instrumentator
+opentelemetry-instrumentation-asgi
 
 
 # --- Storage / persistence ---

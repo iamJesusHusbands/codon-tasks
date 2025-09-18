@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Echo Result · Agent Factory{% endblock %}
+
+{% block content %}
+  <h2>Echo</h2>
+  <form action="/echo" method="post">
+    <label>Say something:
+      <input name="text" placeholder="hello world" />
+    </label>
+    <button type="submit">Send</button>
+  </form>
+
+  {% if echoed %}
+    <div class="card">
+      <strong>Server says:</strong>
+      <pre>{{ echoed }}</pre>
+    </div>
+  {% endif %}
+{% endblock %}

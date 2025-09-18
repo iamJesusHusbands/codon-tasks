@@ -2,7 +2,7 @@
 
 from fastapi import FastAPI
 from opentelemetry.instrumentation.asgi import OpenTelemetryMiddleware
-from telemetry import init_tracing  # OTel setup function from telemetry.py
+from app.telemetry import init_tracing  # OTel setup function from telemetry.py
 
 # 1) Initialize tracing
 init_tracing()

@@ -12,7 +12,7 @@ from __future__ import annotations
 import operator
 from typing import Annotated, List, TypedDict
 
-from telemetry import init_tracing
+from app.telemetry import init_tracing
 init_tracing()
 
 # LangGraph core pieces
